@@ -1,0 +1,23 @@
+{
+	"name": "vs-asciidoctor",
+	// Dockerfileでイメージ・コンテナを作成
+	"dockerFile": "Dockerfile",
+	// リモート先のVS Codeにインストールする拡張機能
+	"extensions": [
+		"ms-ceintl.vscode-language-pack-ja",
+		"asciidoctor.asciidoctor-vscode",
+		"joaompinto.asciidoctor-vscode"
+		// "/tmp/asciidoctor-vscode-3.0.0.vsix"
+	],
+	"settings": { // コンテナ内に追加するVS Codeの設定
+		"AsciiDoc.html_generator": "asciidoctor -r asciidoctor-diagram -o-",
+		"asciidoc.asciidoctor_command": "asciidoctor -r asciidoctor-diagram -a scripts=cjk -a outdir=img -a imagesdir=img -a imagesoutdir=img",
+		// "asciidoc.asciidoctor_command": "asciidoctor -r asciidoctor-diagram -a scripts=cjk -a outdir=.asciidoctor -a imagesdir=.asciidoctor -a imagesoutdir=.asciidoctor",
+		// "asciidoc.asciidoctor_command": "asciidoctor -r asciidoctor-diagram -a scripts=cjk",
+		"asciidoc.asciidoctorpdf_command": "asciidoctor-pdf -r asciidoctor-diagram -a scripts=cjk -a pdf-theme=default-with-fallback-font -a outdir=img -a imagesdir=img -a imagesoutdir=img",
+		// "asciidoc.asciidoctorpdf_command": "asciidoctor-pdf -r asciidoctor-diagram -a scripts=cjk -a pdf-theme=default-with-fallback-font -a outdir=.asciidoctor -a imagesdir=.asciidoctor -a imagesoutdir=.asciidoctor",
+		// "asciidoc.asciidoctorpdf_command": "asciidoctor-pdf -r asciidoctor-diagram -a scripts=cjk -a pdf-theme=default-with-fallback-font",
+		"asciidoc.use_asciidoctor_js": false,
+		"asciidoc.use_asciidoctorpdf": true
+	}
+}
